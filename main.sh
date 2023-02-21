@@ -3,6 +3,8 @@
 # The URL of the script project is:
 # https://github.com/wy580477/replit-trojan
 # https://github.com/XTLS/Xray-install
+sudo apt update
+sudo apt install busybox
 
 FILES_PATH=${FILES_PATH:-./}
 
