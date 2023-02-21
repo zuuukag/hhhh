@@ -92,7 +92,7 @@ run_xray() {
     sed -i "s|uuid|${user_uuid}|g" /tmp/config.json
     ./web -c /tmp/config.json 2>&1 >/dev/null &
     echo
-    green "当前已安装的Xray正式版本：$RELEASE_LATEST"
+    green "：$RELEASE_LATEST"
     echo
     UA_Browser="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36"
     v4=$(curl -s4m6 ip.sb -k)
@@ -103,11 +103,11 @@ run_xray() {
     blue "五大协议相关信息如下------------------------------"
 echo
     yellow "1：vmess+ws+tls配置明文如下，相关参数可复制到客户端"
-    echo "服务器地址：${REPL_SLUG}.${REPL_OWNER}.repl.co"
+    echo "服务器地址：${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com"
     echo "端口：443"
     echo "uuid：$user_uuid"
     echo "传输协议：ws"
-    echo "host/sni：${REPL_SLUG}.${REPL_OWNER}.repl.co"
+    echo "host/sni：${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com"
     echo "path路径：/$user_uuid-vm"
     echo "tls：开启"
     echo
@@ -115,13 +115,13 @@ replit_xray_vmess="vmess://$(echo -n "\
 {\
 \"v\": \"2\",\
 \"ps\": \"replit_xray_vmess\",\
-\"add\": \"${REPL_SLUG}.${REPL_OWNER}.repl.co\",\
+\"add\": \"${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com\",\
 \"port\": \"443\",\
 \"id\": \"$user_uuid\",\
 \"aid\": \"0\",\
 \"net\": \"ws\",\
 \"type\": \"none\",\
-\"host\": \"${REPL_SLUG}.${REPL_OWNER}.repl.co\",\
+\"host\": \"${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com\",\
 \"path\": \"/$user_uuid-vm\",\
 \"tls\": \"tls\"\
 }"\
@@ -135,15 +135,15 @@ echo
 blue "-------------------------------------------"
 echo
 yellow "2：vless+ws+tls配置明文如下，相关参数可复制到客户端"
-    echo "服务器地址：${REPL_SLUG}.${REPL_OWNER}.repl.co"
+    echo "服务器地址：${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com"
     echo "端口：443"
     echo "uuid：$user_uuid"
     echo "传输协议：ws"
-    echo "host/sni：${REPL_SLUG}.${REPL_OWNER}.repl.co"
+    echo "host/sni：${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com"
     echo "path路径：/$user_uuid-vl"
     echo "tls：开启"
     echo
-replit_xray_vless="vless://${user_uuid}@${REPL_SLUG}.${REPL_OWNER}.repl.co:443?encryption=none&security=tls&type=ws&host=${REPL_SLUG}.${REPL_OWNER}.repl.co&path=/$user_uuid-vl#replit_xray_vless"
+replit_xray_vless="vless://${user_uuid}@${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com:443?encryption=none&security=tls&type=ws&host=${REPL_SLUG}.${REPL_OWNER}.repl.co&path=/$user_uuid-vl#replit_xray_vless"
 yellow "分享链接如下"    
 echo "${replit_xray_vless}"
 echo
@@ -153,15 +153,15 @@ echo
 blue "-------------------------------------------"
 echo
 yellow "3：trojan+ws+tls配置明文如下，相关参数可复制到客户端"
-    echo "服务器地址：${REPL_SLUG}.${REPL_OWNER}.repl.co"
+    echo "服务器地址：${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com"
     echo "端口：443"
     echo "密码：$user_uuid"
     echo "传输协议：ws"
-    echo "host/sni：${REPL_SLUG}.${REPL_OWNER}.repl.co"
+    echo "host/sni：${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com"
     echo "path路径：/$user_uuid-tr"
     echo "tls：开启"
     echo 
-replit_xray_trojan="trojan://${user_uuid}@${REPL_SLUG}.${REPL_OWNER}.repl.co:443?security=tls&type=ws&host=${REPL_SLUG}.${REPL_OWNER}.repl.co&path=/$user_uuid-tr#replit_xray_trojan"
+replit_xray_trojan="trojan://${user_uuid}@${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com:443?security=tls&type=ws&host=${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com&path=/$user_uuid-tr#replit_xray_trojan"
 yellow "分享链接如下"    
 echo "${replit_xray_trojan}"
 echo
@@ -171,23 +171,23 @@ echo
 blue "-------------------------------------------"
 echo
 yellow "4：shadowsocks+ws+tls配置明文如下，相关参数可复制到客户端"
-    echo "服务器地址：${REPL_SLUG}.${REPL_OWNER}.repl.co"
+    echo "服务器地址：${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com"
     echo "端口：443"
     echo "密码：$user_uuid"
     echo "加密方式：chacha20-ietf-poly1305"
     echo "传输协议：ws"
-    echo "host/sni：${REPL_SLUG}.${REPL_OWNER}.repl.co"
+    echo "host/sni：${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com"
     echo "path路径：/$user_uuid-ss"
     echo "tls：开启"
     blue "-------------------------------------------"
     echo
     yellow "5：socks+ws+tls配置明文如下，相关参数可复制到客户端"
-    echo "服务器地址：${REPL_SLUG}.${REPL_OWNER}.repl.co"
+    echo "服务器地址：${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com"
     echo "端口：443"
     echo "用户名：$user_uuid"
     echo "密码：$user_uuid"
     echo "传输协议：ws"
-    echo "host/sni：${REPL_SLUG}.${REPL_OWNER}.repl.co"
+    echo "host/sni：${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com"
     echo "path路径：/$user_uuid-so"
     echo "tls：开启"
     blue "-------------------------------------------"
@@ -198,11 +198,10 @@ echo "更新日志：
 23.1.20更新：集成每10分钟自动唤醒功能
 23.1.27更新：一键五协议共存，域名网页显示Bad Request
 
-视频教程：https://www.youtube.com/@ygkkk
-博客地址：https://ygkkk.blogspot.com"
+
 echo
 while true; do
-curl https://${REPL_SLUG}.${REPL_OWNER}.repl.co;sleep 600
+curl https://${REPL_SLUG}.${REPL_OWNER}.deepnoteproject.com;sleep 600
 done
 tail -f
 }
